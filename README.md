@@ -1,6 +1,6 @@
 # expend_livox_camera_calib
 
-This work is an expend version of [livox_camera_calib](https://github.com/hku-mars/livox_camera_calib.git), which is suitable for solid lidar。
+This work is an expend version of [livox_camera_calib](https://github.com/hku-mars/livox_camera_calib.git), which is suitable for spinning LiDAR。
 
 In order to apply this algorithm on spinning LIDAR(egs:VLP16)， I adding the preprocess process([FLOAM](https://github.com/wh200720041/floam.git)) to make the point cloud of the spinning LiDAR denser.
 
@@ -14,7 +14,7 @@ source ~/catkin_ws/devel/setup.bash
 ```
 
 ## Run
-step1: slam to accumulate dense pointcloud. 
+step1: doing slam to accumulate dense pointcloud. 
 ```
 roslaunch floam floam.launch
 ```
