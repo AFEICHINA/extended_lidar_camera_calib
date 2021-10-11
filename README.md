@@ -2,7 +2,7 @@
 
 This work is an expend version of [livox_camera_calib](https://github.com/hku-mars/livox_camera_calib.git), which is suitable for spinning LiDAR。
 
-In order to apply this algorithm on spinning LIDAR(egs:VLP16)， I adding the preprocess process([FLOAM](https://github.com/wh200720041/floam.git)) to make the point cloud of the spinning LiDAR denser.
+In order to apply this algorithm on spinning LIDAR(e.g:VLP16)， I adding the preprocess process([FLOAM](https://github.com/wh200720041/floam.git)) to make the point cloud of the spinning LiDAR denser.
 
 ## Build
 ```
