@@ -32,7 +32,7 @@ roslaunch livox_camera_calib calib_XXX.launch
 
 ## My Result
 ```
-LIDAR : Robosense rspbearl 32
+LIDAR : Robosense RS-Bpearl
 Camera: MindVison MV-SUA133GC-T
 ```
 slam result:
