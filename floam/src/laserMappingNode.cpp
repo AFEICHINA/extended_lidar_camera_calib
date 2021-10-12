@@ -28,7 +28,6 @@
 
 #define pcd_save_en 1
 int pcd_index = 0;
-std::string ROOT_DIR="/home/zhihui/projects/livox_camera_calib_ws/src/floam/";
 pcl::PointCloud<pcl::PointXYZI>::Ptr pcl_wait_save(new pcl::PointCloud<pcl::PointXYZI>());
 
 LaserMappingClass laserMapping;
@@ -132,13 +131,16 @@ int main(int argc, char **argv)
     double scan_period= 0.1;
     double max_dis = 60.0;
     double min_dis = 2.0;
-    double map_resolution = 0.4;
+    double map_resolution = 0.4;    
+    std::string ROOT_DIR;
+
     nh.getParam("/scan_period", scan_period); 
     nh.getParam("/vertical_angle", vertical_angle); 
     nh.getParam("/max_dis", max_dis);
     nh.getParam("/min_dis", min_dis);
     nh.getParam("/scan_line", scan_line);
     nh.getParam("/map_resolution", map_resolution);
+    nh.getParam("/map_save_ROOT", ROOT_DIR);
 
     lidar_param.setScanPeriod(scan_period);
     lidar_param.setVerticalAngle(vertical_angle);
@@ -159,7 +161,7 @@ int main(int argc, char **argv)
     if (pcl_wait_save->size() > 0)
     {
         // pcd_index ++;
-        std::string all_points_dir(std::string(std::string(ROOT_DIR) + "PCD/map_") + /*std::to_string(pcd_index) +*/ std::string(".pcd"));
+        std::string all_points_dir(std::string(std::string(ROOT_DIR) + "PCD/map_") + std::string(".pcd"));
         pcl::PCDWriter pcd_writer;
         std::cout << "current scan saved to /PCD/" << all_points_dir << std::endl;
         pcd_writer.writeBinary(all_points_dir, *pcl_wait_save);
