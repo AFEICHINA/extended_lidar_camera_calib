@@ -155,6 +155,7 @@ int main(int argc, char **argv)
 
     ros::spin();
 
+    // exit the progroam and save the full map
     if (pcl_wait_save->size() > 0)
     {
         // pcd_index ++;
