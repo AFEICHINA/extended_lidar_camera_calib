@@ -30,5 +30,24 @@ step2: lidar camera calibration
 roslaunch livox_camera_calib calib_XXX.launch
 ```
 
+## My Result
+```
+LIDAR : Robosense rspbearl 32
+Camear: MindVison MV-SUA133GC-T
+```
+slam result:
+
+<p align='center'>
+<img width="65%" src="pics/floam_save_pcd.png"/>
+</p>
+
+calib result:
+<p align='center'>
+<img width="65%" src="pics/calib_result.png"/>
+</p>
+
+
+
+
 ## Acknowledgements
 Thanks for [livox_camera_calib](https://github.com/hku-mars/livox_camera_calib.git) and [FLOAM](https://github.com/wh200720041/floam.git).
