@@ -161,7 +161,7 @@ int main(int argc, char **argv)
     if (pcl_wait_save->size() > 0)
     {
         // pcd_index ++;
-        std::string all_points_dir(std::string(std::string(ROOT_DIR) + "PCD/map_") + std::string(".pcd"));
+        std::string all_points_dir(std::string(std::string(ROOT_DIR) + "/PCD/map_") + std::string(".pcd"));
         pcl::PCDWriter pcd_writer;
         std::cout << "current scan saved to /PCD/" << all_points_dir << std::endl;
         pcd_writer.writeBinary(all_points_dir, *pcl_wait_save);
