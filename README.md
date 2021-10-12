@@ -40,6 +40,9 @@ slam result:
 <p align='center'>
 <img width="65%" src="pics/floam_save_pcd.png"/>
 </p>
+<p align='center'>
+<img width="65%" src="pics/map_pcd.png"/>
+</p>
 
 calib result:
 <p align='center'>
