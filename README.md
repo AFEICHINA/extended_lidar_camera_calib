@@ -4,6 +4,11 @@ This work is an expend version of [livox_camera_calib](https://github.com/hku-ma
 
 In order to apply this algorithm on spinning LIDAR(e.g:VLP16)， I adding the preprocess process([FLOAM](https://github.com/wh200720041/floam.git)) to make the point cloud of the spinning LiDAR denser.
 
+## Data Prepare
+```
+When you calibrate the rotating lidar and camera, record the data by holding the device(lidar and camera) stationary for a period of time and then slowly and repeatedly move the entire device in this direction to accumulate the point cloud.
+```
+
 ## Build
 ```
 cd ~/catkin_ws/src
@@ -16,13 +21,13 @@ source ~/catkin_ws/devel/setup.bash
 ## Run
 step1: doing slam to accumulate dense pointcloud. 
 ```
-roslaunch floam floam.launch
+roslaunch floam floam_XXX.launch
 ```
 
 
 step2: lidar camera calibration
 ```
-roslaunch livox_camera_calib calib.launch
+roslaunch livox_camera_calib calib_XXX.launch
 ```
 
 ## Acknowledgements
