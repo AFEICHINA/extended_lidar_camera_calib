@@ -103,8 +103,11 @@ void laser_processing(){
             //read data
             mutex_lock.lock();
             pcl::PointCloud<pcl::PointXYZI>::Ptr pointcloud_in(new pcl::PointCloud<pcl::PointXYZI>());
-            pcl::fromROSMsg(*pointCloudBuf.front(), *pointcloud_in);
-            // convertMyLidarToPCLPointCloud(pointCloudBuf.front(), *pointcloud_in);
+            if(lidar_type == "rsbpearl")
+                convertMyLidarToPCLPointCloud(pointCloudBuf.front(), *pointcloud_in);
+            else
+               pcl::fromROSMsg(*pointCloudBuf.front(), *pointcloud_in);
+            
             ros::Time pointcloud_time = (pointCloudBuf.front())->header.stamp;
             pointCloudBuf.pop();
             mutex_lock.unlock();
