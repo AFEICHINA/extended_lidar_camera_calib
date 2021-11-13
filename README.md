@@ -8,6 +8,12 @@ In order to apply this algorithm on spinning LIDAR(e.g:VLP16)， I add the prepr
 
 When you calibrate the spinning lidar and camera, record the data by holding the device(lidar and camera) stationary for a period of time and then slowly and repeatedly move the entire device in this direction to accumulate the point cloud.
 
+## Dependency
+```
+ceres-slover == 1.14.0
+pcl==1.8.0
+```
+
 ## Build
 ```
 cd ~/catkin_ws/src
@@ -33,7 +39,7 @@ roslaunch livox_camera_calib calib_XXX.launch
 In my test, I get better results in indoor enviroment. 
 ```
 LIDAR : Robosense RS-Bpearl
-Camera: MindVison MV-SUA133GC-T
+Camera: MindVision MV-SUA133GC-T
 ```
 slam result:
 <p align='center'>

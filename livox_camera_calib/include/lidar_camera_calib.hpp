@@ -358,6 +358,21 @@ void Calibration::edgeDetector(
   cv::Mat canny_result = cv::Mat::zeros(height_, width_, CV_8UC1);
   cv::Canny(src_img, canny_result, canny_threshold, canny_threshold * 3, 3,
             true);
+
+  // //find straight line
+  // cv::Mat line_result = cv::Mat::zeros(height_, width_, CV_8UC1);
+  // std::vector<cv::Vec4i> lines;
+  // // 检测直线，最小投票为90，线条不短于50，间隙不小于10
+  // cv::HoughLinesP(canny_result,lines,1,CV_PI/180,90,40,8);
+  // std::vector<cv::Vec4i>::const_iterator it=lines.begin();
+  // while(it!=lines.end())
+  // {
+  //     cv::Point pt1((*it)[0],(*it)[1]);
+  //     cv::Point pt2((*it)[2],(*it)[3]);
+  //     cv::line(line_result,pt1,pt2,cv::Scalar(255),1); //  线条宽度设置为2
+  //     ++it;
+  // }
+
   std::vector<std::vector<cv::Point>> contours;
   std::vector<cv::Vec4i> hierarchy;
   cv::findContours(canny_result, contours, hierarchy, cv::RETR_EXTERNAL,
@@ -393,6 +408,7 @@ void Calibration::edgeDetector(
   edge_cloud->height = 1;
   // cv::imshow("canny result", canny_result);
   // cv::imshow("edge result", edge_img);
+  // // cv::imshow("line result", line_result);
   // cv::waitKey();
 }
 

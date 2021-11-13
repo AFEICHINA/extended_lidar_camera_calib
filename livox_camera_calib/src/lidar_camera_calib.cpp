@@ -239,7 +239,7 @@ int main(int argc, char **argv) {
   cv::imshow("Initial extrinsic", init_img);
   cv::waitKey(1000);
 
-  roughCalib(calibra, calib_params, DEG2RAD(0.1), 50);
+  roughCalib(calibra, calib_params, DEG2RAD(0.1), 80);
   cv::Mat test_img = calibra.getProjectionImg(calib_params);
   cv::imshow("After rough extrinsic", test_img);
   cv::waitKey(1000);
