@@ -17,7 +17,7 @@ pcl==1.8.0
 ## Build
 ```
 cd ~/catkin_ws/src
-git clone https://github.com/AFEICHINA/expend_lidar_camera_calib.git
+git clone https://github.com/AFEICHINA/extended_lidar_camera_calib.git
 cd ..
 catkin_make
 source ~/catkin_ws/devel/setup.bash
